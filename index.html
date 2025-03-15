@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GPA & CGPA Calculator</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="min-h-screen flex items-center justify-center p-6">
+        <div class="container">
+            <h1>GPA & CGPA Calculator</h1>
+
+            <div id="course-inputs">
+                <div class="card course-row">
+                    <input type="text" placeholder="Course Name"
+                        class="course-name w-full md:w-1/3 px-4 py-3 bg-gray-800 text-gray-300 rounded-md focus:outline-none focus:ring focus:ring-green-500">
+                    <input type="number" placeholder="Credit Hours"
+                        class="credit-hours w-full md:w-1/3 px-4 py-3 bg-gray-800 text-gray-300 rounded-md focus:outline-none focus:ring focus:ring-green-500"
+                        min="1" max="3">
+                    <select
+                        class="grade w-full md:w-1/3 px-4 py-3 bg-gray-800 text-gray-300 rounded-md focus:outline-none focus:ring focus:ring-green-500">
+                        <option value="4.0">A</option>
+                        <option value="3.67">A-</option>
+                        <option value="3.33">B+</option>
+                        <option value="3.0">B</option>
+                        <option value="2.67">B-</option>
+                        <option value="2.33">C+</option>
+                        <option value="2.0">C</option>
+                        <option value="1.87">C-</option>
+                        <option value="1.33">D+</option>
+                        <option value="1.0">D</option>
+                        <option value="0">F</option>
+                    </select>
+                    <button onclick="removeCourse(this)"
+                        class="text-red-400 hover:text-red-600 font-semibold">Remove</button>
+                </div>
+            </div>
+
+            <div class="text-center mt-8 space-y-4">
+                <button onclick="addCourse()" class="btn bg-blue-600 text-white py-3 px-5 w-full md:w-1/2">
+                    Add Another Course
+                </button>
+                <button onclick="calculateGPA()" class="btn bg-green-500 text-white py-3 px-5 w-full md:w-1/2">
+                    Calculate GPA
+                </button>
+                <button onclick="addSemester()" class="btn bg-indigo-600 text-white py-3 px-5 w-full md:w-1/2">
+                    Save GPA and Calculate CGPA
+                </button>
+            </div>
+            <h2 id="gpa-result" class="mt-10 text-lg font-semibold"></h2>
+            <h2 id="cgpa-result" class="text-lg font-semibold"></h2>
+        </div></div>
+        <footer class="bg-gray footerMargin shadow white:bg-white-800">
+            <div class="w-full mx-auto max-w-screen-xl p-4 md:flex md:items-center md:justify-between">
+                <span class="text-sm text-white sm:text-center">© 2024 <a
+                        href="#" class="hover:underline">Muzammil Hussain</a> All Rights
+                    Reserved.
+                </span>
+            </div>
+        </footer>
+        
+    
+    <script src="index.js"></script>
+</body>
+
+</html>
